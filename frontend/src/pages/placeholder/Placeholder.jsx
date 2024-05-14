@@ -39,7 +39,7 @@ const Placeholder = () => {
     let orderData = {
       address:data,
       items:orderItems,
-      amount:getTotalFromAmount() + 2
+      amount:getTotalFromAmount() + 30
     }
     try {
     let response = await axios.post(URL+"/api/order/place",orderData,{headers:{token}});
@@ -157,12 +157,12 @@ const Placeholder = () => {
             <hr />
             <div className="cart-total-details flex py-2 justify-between items-center text-gray-400">
               <p>Delivery Fee</p>
-              <p>{2}</p>
+              <p>{30}</p>
             </div>
             <hr />
             <div className="cart-total-details flex py-2 justify-between items-center text-gray-700">
               <b>Total</b>
-              <b>{getTotalFromAmount() + 2}</b>
+              <b>{getTotalFromAmount() + 30}</b>
             </div>
             <hr className="my-5 " />
             <button

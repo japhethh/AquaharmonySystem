@@ -24,9 +24,9 @@ const Cart = () => {
               <div className="cart-item-title cart-items-item grid grid-cols-6 py-1  items-center text-black gap-2">
                 <img className="w-[50px]" src={URL+"/images/"+item.image} alt="" />
                 <p>{item.name}</p>
-                <p>${item.price}</p>
+                <p>₱{item.price}</p>
                 <p>{cartItem[item._id]}</p>
-                <p>${item.price * cartItem[item._id]} </p>
+                <p>₱{item.price * cartItem[item._id]} </p>
                 <p onClick={() => removeFromCart(item._id)} className="cursor-pointer text-xl">x</p>
               </div>
               <hr className="h-[1px] bg-gray-300 border-none" />
@@ -45,12 +45,12 @@ const Cart = () => {
           <hr />
           <div className="cart-total-details flex py-2 justify-between items-center text-gray-500">
             <p>Delivery Fee</p>
-            <p>{getTotalFromAmount() === 0 ? 0 : 2}</p>
+            <p>{getTotalFromAmount() === 0 ? 0 : 30}</p>
           </div>
           <hr />
           <div className="cart-total-details flex py-2 justify-between items-center text-gray-700">
             <b>Total</b>
-            <b>{getTotalFromAmount() === 0 ? 0 : getTotalFromAmount() + 2}</b>
+            <b>{getTotalFromAmount() === 0 ? 0 : getTotalFromAmount() + 30}</b>
           </div>
         </div>
         <hr className="my-5 "/>

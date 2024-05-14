@@ -38,7 +38,7 @@ const ProductItems = ({ id, name, image, price, description }) => {
         {/* <img className="w-[70px]" src={assets.rating_starts} alt="" /> */}
       </div>
       <p className="text-slate-500 text-sm font-medium">{description}</p>
-      <p className="text-lg font-semibold text-orange-500">${price}</p>
+      <p className="text-lg font-semibold text-orange-500">₱{price}</p>
     </div>
   );
 };

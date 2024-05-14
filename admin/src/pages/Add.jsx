@@ -9,7 +9,7 @@ const Add = ({url}) => {
     name: "",
     description: "",
     price: "",
-    category: "Salad",
+    category: "Shower",
   });
 
 
@@ -91,21 +91,17 @@ const Add = ({url}) => {
         <div className="add-category-price flex  gap-5">
           <div className="add-category flex flex-col gap-2">
             <p>Product category</p>
+
+            {/* Select */}
             <select
               onChange={onChangeHandle}
               value={data.category}
               className="border-[1.50px] border-gray-400 py-1 px-1 rounded-sm w-[120px] p-2"
               name="category"
             >
-              <option value="Salad">Salad</option>
-              <option value="Rolls">Rolls</option>
-              <option value="Deserts">Deserts</option>
-              <option value="Sandwich">Sandwich</option>
-              <option value="Cake">Cake</option>
-              <option value="Pure Veg">Pure Veg</option>
-              <option value="Noodles">Noodles</option>
-              <option value="Pasta">Pasta</option>
+              <option value="Shower">Shower</option>
             </select>
+
           </div>
           <div className="add-price flex flex-col gap-2">
             <p>Product Price</p>
@@ -115,7 +111,7 @@ const Add = ({url}) => {
               className="border-[1.50px] border-gray-400 py-1 px-1 rounded-sm w-[120px] p-2"
               type="Number"
               name="price"
-              placeholder="$20"
+              placeholder="₱10000"
             />
           </div>
         </div>
