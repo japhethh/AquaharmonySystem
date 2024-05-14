@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import { StoreContext } from "../../context/StoreContext";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const { cartItem, food_list, removeFromCart,getTotalFromAmount,URL } = useContext(StoreContext);
+  const navigate = useNavigate();
   return (
     <div>
       <div className="grid grid-cols-6 items-center text-gray-600 gap-2 ">
@@ -18,7 +20,7 @@ const Cart = () => {
       {food_list.map((item, index) => {
         if (cartItem[item._id] > 0) {
           return (
-            <div>
+            <div key={index}>
               <div className="cart-item-title cart-items-item grid grid-cols-6 py-1  items-center text-black gap-2">
                 <img className="w-[50px]" src={URL+"/images/"+item.image} alt="" />
                 <p>{item.name}</p>
@@ -52,7 +54,7 @@ const Cart = () => {
           </div>
         </div>
         <hr className="my-5 "/>
-        <button className="flex justify-center items-center py-2 px-4 bg-orange-500 text-white font-semibold text-md">PROCEED TO CHECKOUT</button>
+        <button type="submit" onClick={() => navigate("/order")} className="flex justify-center items-center py-2 px-4 bg-orange-500 text-white font-semibold text-md">PROCEED TO CHECKOUT</button>
       </div>
       <div className="cart-promocode flex-1">
         <div>
