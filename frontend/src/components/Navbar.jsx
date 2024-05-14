@@ -19,11 +19,11 @@ const Navbar = ({setShowLogin}) => {
   }
   return (
     <div className="flex justify-between items-center py-5  ">
-      <Link to="/"><img
-        className="max-md:w-[90px] md:w-[120px] lg:w-[150px]"
-        src={assets.logo}
+      <Link className="flex justify-center items-center font-semibold text-2xl gap-2" to="/"><img
+        className="max-md:w-[40px] md:w-[50px] lg:w-[50px]"
+        src={assets.iconlogo}
         alt=""
-      /></Link>
+      /><span className="max-md:hidden">Aqua Harmony</span></Link>
 
       <ul className="navbar-menu flex gap-5 text-[#49557e] cursor-pointer max-md:hidden ">
         <Link to="/"

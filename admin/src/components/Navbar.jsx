@@ -5,7 +5,10 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between items-center py-2 px-[4%]">
-      <img className="w-32" src={assets.logo} alt="" />
+      <div className="flex justify-center items-center font-semibold text-2xl gap-2">
+      <img className="max-md:w-[40px] md:w-[50px] lg:w-[50px]" src={assets.iconLogo} alt="" />
+      <span className="max-md:hidden">Aqua Harmony</span>
+      </div>
       <div className="relative" >
 
       <img onClick={() => setOpen(!open)} className="w-10" src={assets.profile_image} alt="" />
