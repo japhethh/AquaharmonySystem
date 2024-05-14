@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { StoreContext } from "../context/StoreContext";
-import FoodItems from "./FoodItems";
+import ProductItems from "./ProductItems";
 
-const FoodDisplay = ({ category }) => {
+const ProductDisplay = ({ category }) => {
   const { food_list } = useContext(StoreContext);
   // console.log(food_list)
 
@@ -15,7 +15,7 @@ const FoodDisplay = ({ category }) => {
           
           if (category === "All" || category === item.category) {
             return (
-              <FoodItems
+              <ProductItems
                 key={index}
                 id={item._id}
                 name={item.name}
@@ -30,4 +30,4 @@ const FoodDisplay = ({ category }) => {
     </div>
   );
 };
-export default FoodDisplay;
+export default ProductDisplay;

@@ -3,7 +3,7 @@ import { StoreContext } from '../context/StoreContext';
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { CiCircleMinus } from "react-icons/ci";
 
-const FoodItems = ({ id, name, image, price, description }) => {
+const ProductItems = ({ id, name, image, price, description }) => {
   
   const { cartItem, addToCart, removeFromCart,URL } = useContext(StoreContext);
 
@@ -43,4 +43,4 @@ const FoodItems = ({ id, name, image, price, description }) => {
   );
 };
 
-export default FoodItems;
+export default ProductItems;
