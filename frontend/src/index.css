@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  scroll-behavior:smooth;
+}
+
+@keyframes fadeIn {
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+
+.header_contents{
+  animation: fadeIn 3s;
+}
+.food-item{
+  animation: fadeIn 0.5s;
+}
+.login-popup-form{
+  animation:fadeIn 0.5s;
+}
+
+/* .navbar-profile:hover .nav-profile-dropdown {
+display:flex;
+background:red;
+flex-direction:column;
+gap:10px;
+} */
