@@ -61,6 +61,7 @@ import bag_icon from './bag_icon.png'
 import logout_icon from './logout_icon.png'
 import parcel_icon from './parcel_icon.png'
 import iconlogo from './iconlogo.jpeg'
+import showerMenu from './shower.png'
 
 export const assets = {
     logo,
@@ -82,38 +83,16 @@ export const assets = {
     logout_icon,
     bag_icon,
     parcel_icon,
-    iconlogo
+    iconlogo,
+    
 }
 
 export const menu_list = [
     {
-        menu_name: "Salad",
-        menu_image: menu_1
+        menu_name: "Shower",
+        menu_image: showerMenu
     },
-    {
-        menu_name: "Rolls",
-        menu_image: menu_2
-    },
-    {
-        menu_name: "Deserts",
-        menu_image: menu_3
-    },
-    {
-        menu_name: "Sandwich",
-        menu_image: menu_4
-    },
-    {
-        menu_name: "Cake",
-        menu_image: menu_5
-    },
-    {
-        menu_name: "Pure Veg",
-        menu_image: menu_6
-    },
-    {
-        menu_name: "Pasta",
-        menu_image: menu_7
-    }
+    
 ]
 
 // export const food_list = [
