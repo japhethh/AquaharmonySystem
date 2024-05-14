@@ -14,8 +14,8 @@ const List = ({url}) => {
     }
   };
   
-  const removeFood = async (foodId) => {
-      const response = await axios.post(`${url}/api/product/remove`,{id:foodId});
+  const removeProduct = async (productId) => {
+      const response = await axios.post(`${url}/api/product/remove`,{id:productId});
       await fetchList();
       if(response.data.success){
         toast.success(response.data.message)
@@ -30,7 +30,7 @@ const List = ({url}) => {
 
   return (
     <div className="list flex flex-col p-10    w-full ">
-      <p>All Food List</p>
+      <p>All Product List</p>
       <div className="list-table">
         <div className="list-table-format title  grid grid-cols-5 gap-2 py-2 px-3 border-[1px] border-gray-400 text-sm max-md:hidden text-gray-600">
           <b>Image</b>
@@ -46,7 +46,7 @@ const List = ({url}) => {
               <p>{item.name}</p>
               <p>{item.category}</p>
               <p>${item.price}</p>
-              <p className="cursor-pointer" onClick={() => removeFood(item._id)}>X</p>
+              <p className="cursor-pointer" onClick={() => removeProduct(item._id)}>X</p>
             </div>
           );
         })}
