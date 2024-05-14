@@ -70,7 +70,7 @@ const Add = ({url}) => {
           <input
             onChange={onChangeHandle}
             value={data.name}
-            className="border-[1.50px] border-gray-400 py-1 px-1 rounded-sm"
+            className="border-[1.50px] border-gray-400 py-1 px-1  d rounded-sm"
             type="text"
             name="name"
             placeholder="Type here"
