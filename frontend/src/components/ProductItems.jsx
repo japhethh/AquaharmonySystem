@@ -18,14 +18,14 @@ const ProductItems = ({ id, name, image, price, description }) => {
               onClick={() => addToCart(id)}
             />
           ) : (
-            <div className="cursor-pointer py-2 px-2 bg-white rounded-full flex justify-end items-center gap-2">
+            <div className="cursor-pointer py-1 px-2 bg-opacity-50 bg-gray-200 rounded-full flex justify-end items-center gap-2">
               <CiCircleMinus
-                className="text-red-500 bg-white rounded-full border-2 border-red-600 text-4xl max-md:text-2xl"
+                className="text-red-500 bg-white rounded-full border-2 border-red-600 text-[40px] max-md:text-[30px]"
                 onClick={() => removeFromCart(id)}
               />
               <p>{cartItem[id]}</p>
               <IoIosAddCircleOutline
-                className="text-green-500 bg-white rounded-full border-2 border-green-600 text-4xl max-md:text-2xl"
+                className="text-green-500 bg-white rounded-full border-2 border-green-600 text-[40px] max-md:text-[30px]"
                 onClick={() => addToCart(id)}
               />
             </div>

@@ -152,7 +152,7 @@ const Placeholder = () => {
 
             <div className="cart-total-details flex py-2 justify-between items-center text-gray-400">
               <p className=" ">Subtotal</p>
-              <p>{getTotalFromAmount()}</p>
+              <p>₱{getTotalFromAmount()}</p>
             </div>
             <hr />
             <div className="cart-total-details flex py-2 justify-between items-center text-gray-400">
@@ -162,13 +162,13 @@ const Placeholder = () => {
             <hr />
             <div className="cart-total-details flex py-2 justify-between items-center text-gray-700">
               <b>Total</b>
-              <b>{getTotalFromAmount() + 30}</b>
+              <b>₱{getTotalFromAmount() + 30}</b>
             </div>
             <hr className="my-5 " />
             <button
               type="submit"
               onClick={() => navigate("/order")}
-              className="flex justify-center items-center py-2 px-4 bg-orange-500 text-white font-semibold text-md mt-4"
+              className="flex justify-center items-center bg-black rounded-full py-4 w-full text-white font-semibold text-md mt-4"
             >
               PROCEED TO CHECKOUT
             </button>

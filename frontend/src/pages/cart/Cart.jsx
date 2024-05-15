@@ -54,7 +54,7 @@ const Cart = () => {
           </div>
         </div>
         <hr className="my-5 "/>
-        <button type="submit" onClick={() => navigate("/order")} className="flex justify-center items-center py-2 px-4 bg-orange-500 text-white font-semibold text-md">PROCEED TO CHECKOUT</button>
+        <button type="submit" onClick={() => navigate("/order")} className="flex justify-center items-center py-4 px-5 bg-black rounded-full  text-white font-semibold text-md">PROCEED TO CHECKOUT</button>
       </div>
       <div className="cart-promocode flex-1">
         <div>

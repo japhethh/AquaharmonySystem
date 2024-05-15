@@ -13,16 +13,16 @@ const Footer = () => {
     >
       <div className="flex justify-between gap-12 wrap max-md:flex-col max-md:px-4 ">
         <div className="footer-content-left md:w-2/5 w-full  flex flex-col gap-3">
-          <img className="w-[150px]" src={assets.logo} alt="" />
+          <img className="w-[50px]" src={assets.iconlogo} alt="" />
           <p className="">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam,
           </p>
           <div className="flex text-2xl items-center gap-5 ">
-            <FaInstagram  />
-            <FaFacebook />
-            <FaXTwitter />
+            <a href="https://www.instagram.com/adreyjapheth/?hl=en"><FaInstagram  /></a> 
+            <a href="https://www.facebook.com/Japhetlocaylocay"><FaFacebook /></a>
+            <a href=""><FaXTwitter /></a>
           </div>
         </div>
         <div className="footer-content-center md:w-1/5 w-full  flex flex-col gap-3">
@@ -43,7 +43,7 @@ const Footer = () => {
         </div>
       </div>
       <hr className="bg-gray-400 h-[3px]  flex justify-center items-center my-8 w-full" />
-      <p className="text-center ">Copy right 2024 ©️ japheth. All Right Reserved.</p>
+      <p className="text-center ">Copy right 2024 ©️ AquaHarmony. All Right Reserved.</p>
     </div>
   );
 };

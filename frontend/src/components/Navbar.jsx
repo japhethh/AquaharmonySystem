@@ -4,6 +4,10 @@ import {Link, useNavigate} from 'react-router-dom'
 import {StoreContext} from '../context/StoreContext'
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { IoLogOutOutline } from "react-icons/io5";
+import { IoSearch } from "react-icons/io5";
+import { CgProfile } from "react-icons/cg";
+
+
 
 
 
@@ -34,7 +38,7 @@ const Navbar = ({setShowLogin}) => {
         >
           Home
         </Link>
-        <Link
+        <Link to="/menu"
           onClick={() => setMenu("menu")}
           className={
             menu === "menu" ? "pb-1 border-b-[2px] border-[#49557e]" : ""
@@ -42,7 +46,7 @@ const Navbar = ({setShowLogin}) => {
         >
           Menu
         </Link>
-        <Link
+        <Link to="/mobile-app"
           onClick={() => setMenu("mobile-app")}
           className={
             menu === "mobile-app" ? "pb-1 border-b-[2px] border-[#49557e]" : ""
@@ -50,7 +54,7 @@ const Navbar = ({setShowLogin}) => {
         >
           mobile-app
         </Link>
-        <Link
+        <Link to="/contactUs"
           onClick={() => setMenu("contact-us")}
           className={
             menu === "contact-us" ? "pb-1 border-b-[2px] border-[#49557e]" : ""
@@ -61,10 +65,12 @@ const Navbar = ({setShowLogin}) => {
       </ul>
 
       <div className="navbar-right flex items-center gap-10 cursor-pointer">
-        <img className="w-5" src={assets.search_icon} alt="" />
+      <IoSearch className="text-2xl"/>
 
         <div className="navbar-search-icon relative">
-          <Link to="/cart"><img className="w-5" src={assets.basket_icon} alt="" /></Link>
+          <Link to="/cart">
+          <HiOutlineShoppingBag className="text-2xl"/>
+          </Link>
 
           <div className={`${getTotalFromAmount() === 0 ? "" : "absolute h-2 w-2 bg-orange-500 rounded-full top-[-6px] right-[-5px]"}`}></div>
         </div>
@@ -73,11 +79,11 @@ const Navbar = ({setShowLogin}) => {
           Sign in
         </button>) : (
        <div className="navbar-profile relative group">
-       <img className="w-5" src={assets.profile_icon} alt="" />
-       <ul className="nav-profile-dropdown absolute right-0 z-10 hidden group-hover:flex flex-col  gap-4 bg-white border-[1px] border-orange-500 shadow-md px-3 py-5 rounded-sm outline-white">
-         <li className="flex items-center justify-start gap-1 cursor-pointer hover:text-orange-500"><HiOutlineShoppingBag /><p>Orders</p></li>
+       <CgProfile className="text-[30px] text-gray-900"/>
+       <ul className="nav-profile-dropdown absolute right-0 z-10 hidden group-hover:flex flex-col  gap-0 bg-white border-[1px] shadow-xl  rounded-md outline-white">
+         <li className="flex items-center justify-start px-6 py-3 text-gray-700 gap-1 cursor-pointer hover:text-orange-500"><HiOutlineShoppingBag /><p>Orders</p></li>
          <hr className="h-[1px] bg-blue-500" />
-         <li onClick={logout} className="flex items-center justify-start gap-1 cursor-pointer hover:text-orange-500"><IoLogOutOutline /><p>Logout</p></li>
+         <li onClick={logout} className="flex items-center text-gray-700  px-6 py-3 justify-start gap-1 cursor-pointer hover:text-orange-500"><div className="flex justify-center items-center gap-1"><IoLogOutOutline /><p>Logout</p></div></li>
        </ul>
      </div>
         ) }

@@ -37,3 +37,14 @@ background:red;
 flex-direction:column;
 gap:10px;
 } */
+
+.customer_feedback {
+  width: 250px;
+  height: auto;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  /* Limit to 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

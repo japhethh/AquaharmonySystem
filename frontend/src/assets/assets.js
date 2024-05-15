@@ -29,6 +29,7 @@ import logout_icon from './logout_icon.png'
 import parcel_icon from './parcel_icon.png'
 import iconlogo from './iconlogo.jpeg'
 import showerMenu from './shower.png'
+import messageContact from './messageContact.png'
 
 export const assets = {
     logo,
@@ -51,7 +52,7 @@ export const assets = {
     bag_icon,
     parcel_icon,
     iconlogo,
-    
+    messageContact
 }
 
 export const menu_list = [
@@ -61,5 +62,73 @@ export const menu_list = [
     },
     
 ]
+
+export const CUSTOMER_TESTIMONIALS = [
+    {
+      product: "LuxeRain Shower Head",
+      feedback: "ABSOLUTELY TRANSFORMATIVE!!! The LuxeRain Shower Head has changed my mornings completely. Feels like I’m under a warm waterfall. And the team? Super responsive and genuinely caring. Best customer experience, period.",
+      customerName: "Sophia L.",
+      date: "04/10/2023",
+      rate:3
+  
+    },
+    {
+      product: "AquaTherapy Bath Bombs",
+      feedback: "PURE BLISS IN A BOMB!!! These bath bombs are just heavenly. Skin feels like silk. And when I needed help choosing scents, the service was nothing short of spectacular. A+ for both product and people behind it.",
+      customerName: "Daniel M.",
+      date: "03/15/2023",
+      rate:5
+  
+    },
+    {
+      product: "SteamSpa Generator",
+      feedback: "A GAME CHANGER!!! Installing the SteamSpa Generator was the best decision I've made for my home spa. The installation support was incredible—patient and clear. It's luxury and service at its finest.",
+      customerName: "Emily S.",
+      date: "03/29/2023",
+      rate:5
+  
+    },
+    {
+      product: "ZenStone Pebble Shower Mat",
+      feedback: "LIKE WALKING ON A CLOUD!!! This shower mat is not just a mat; it’s a spa treatment for your feet. Had a minor issue, and the service was rapid and warm. Products and empathy of this caliber are rare!",
+      customerName: "Oliver H.",
+      date: "04/05/2023",
+      rate:5
+  
+    },
+    {
+      product: "AromaSense Shower Head",
+      feedback: "AN OLFATORY JOURNEY!!! The AromaSense Shower Head is my new favorite thing. It turns every shower into an aromatherapy session. Plus, the customer service is as refreshing as the scents. Top marks for everything!",
+      customerName: "Isabella R.",
+      date: "02/27/2023",
+      rate:5
+  
+    },
+    {
+      product: "HydroLux Shower Speaker System",
+      feedback: "MUSIC TO MY EARS!!! The HydroLux Shower Speaker has elevated my shower concerts. The sound quality is unmatched. Needed some setup advice and the support was harmonious—quick, helpful, and friendly.",
+      customerName: "Lucas G.",
+      date: "04/01/2023",
+      rate:5
+  
+    },
+    {
+      product: "EcoRain Water-Saving Shower Head",
+      feedback: "SAVES WATER, SAVES THE DAY!!! The EcoRain Shower Head not only conserves water, it also gives a powerful shower experience. The team behind it is just as impressive, with their eco-friendly mission and exceptional service.",
+      customerName: "Sophie T.",
+      date: "03/20/2023",
+      rate:5
+  
+    },
+    {
+      product: "BathBliss Bath Pillow",
+      feedback: "CLOUD NINE COMFORT!!! The BathBliss Bath Pillow has transformed my baths into a luxurious escape. And when I reached out for more product info, the service was as soft and comforting as the pillow itself.",
+      customerName: "Nathan J.",
+      date: "03/05/2023",
+      rate:5
+  
+    },
+  ];
+  
 
 // export const product_list = []
