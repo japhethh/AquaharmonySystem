@@ -44,7 +44,7 @@ const ContactUs = () => {
           university community.
         </p>
         <ul className="mt-4">
-          <li>Contact@greekstack.dev</li>
+          <li>helloworld32130@gmail.com</li>
           <li>09511431876</li>
           <li>Quezon City</li>
         </ul>
