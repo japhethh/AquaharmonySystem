@@ -42,8 +42,6 @@ const Add = ({url}) => {
       }else{
         toast.error(response.data.message)
       }
-
-
   };
   return (
     <div className="add w-[70%] ml-[5vw] mt-14 text-sm">
