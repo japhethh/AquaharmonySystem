@@ -31,12 +31,14 @@ const LoginPopup = ({ setShowLogin }) => {
 
     const response = await axios.post(newUrl, data)
     if(response.data.success){
-      setToken(response.data.token);
+      setToken(response.data.token); 
       localStorage.setItem("token",response.data.token)
       setShowLogin(false)
+      window.location.reload(); 
     }else{
       alert(response.data.message)
     }
+    
 
   }
 
@@ -84,7 +86,7 @@ const LoginPopup = ({ setShowLogin }) => {
             required
           />
         </div>
-        <button type="submit" className="cursor-pointer py-2 px-4 rounded-lg bg-orange-500 text-white font-semibold">
+        <button type="submit" className="cursor-pointer py-2 px-4 rounded-lg bg-black text-white font-semibold">
           {currState === "Sign up" ? "Create account" : "Login"}
         </button>
         <div className="flex items-start mt-1  gap-2">

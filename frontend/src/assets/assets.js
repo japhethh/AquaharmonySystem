@@ -30,6 +30,7 @@ import parcel_icon from './parcel_icon.png'
 import iconlogo from './iconlogo.jpeg'
 import showerMenu from './shower.png'
 import messageContact from './messageContact.png'
+import HomeMainGirljpg from './HomeMainGirljpg.jpg'
 
 export const assets = {
     logo,
@@ -52,13 +53,18 @@ export const assets = {
     bag_icon,
     parcel_icon,
     iconlogo,
-    messageContact
+    messageContact,
+    HomeMainGirljpg
 }
 
 export const menu_list = [
     {
         menu_name: "Shower",
         menu_image: showerMenu
+    },
+    {
+        menu_name: "Shower Head",
+        menu_image: HomeMainGirljpg 
     },
     
 ]

@@ -8,6 +8,7 @@ import Error from "./pages/error/Error";
 import LoginPopup from "./components/LoginPopup";
 import Placeholder from "./pages/placeholder/Placeholder";
 import  ContactUs from "./pages/contactUs/contactUs";
+import  Account from "./pages/account/account";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/order" element={<Placeholder />} />
           <Route path="*" element={<Error />} />
           <Route path="/contactUs" element={<ContactUs/>}/>
+          <Route path="/account" element={<Account/>}/>
         </Routes>
         <Footer />
         {/* <Example /> */}

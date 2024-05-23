@@ -85,4 +85,17 @@ try {
 }
 };
 
-export { loginUser, registerUser,UserList };
+const getUser = async (req,res) => {
+  const {userId} = req.body;
+
+try {
+  const user = await userModel.findById(userId);
+  const userData = await user.save();
+  res.json({success:true,userData})
+} catch (error) {
+  console.log(error);
+  res.json({success:false,message:"Error"})
+}
+}
+
+export { loginUser, registerUser,UserList ,getUser};

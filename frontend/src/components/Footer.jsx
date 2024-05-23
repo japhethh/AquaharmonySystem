@@ -43,6 +43,7 @@ const Footer = () => {
         </div>
       </div>
       <hr className="bg-gray-400 h-[3px]  flex justify-center items-center my-8 w-full" />
+      <p className="text-center ">Design by Adrey Locaylocay</p>
       <p className="text-center ">Copy right 2024 ©️ AquaHarmony. All Right Reserved.</p>
     </div>
   );

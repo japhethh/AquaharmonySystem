@@ -48,3 +48,9 @@ gap:10px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.mobile-cart{
+  border-radius: 12px;
+  box-shadow:  6px 6px 12px #bebebe,
+               -6px -6px 12px #ffffff;
+}

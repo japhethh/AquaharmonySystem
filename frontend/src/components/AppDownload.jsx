@@ -5,7 +5,7 @@ const AppDownload = () => {
   return (
     <div className="text-[25px] mx-auto flex flex-col items-center justify-center mt-[100px]  text-center font-medium">
       <p className="text-[18px] py-5 font-medium">
-        For Better Experience Download <br /> Food App
+        For Better Experience Download <br /> Shower App
       </p>
       <div className="app-download-platforms flex  gap-3 items-center justify-between cursor-pointer">
         <img

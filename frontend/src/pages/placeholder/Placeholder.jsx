@@ -60,7 +60,7 @@ const Placeholder = () => {
     <div>
       <form
         onSubmit={placeHolder}
-        className="place-order flex items-start justify-between mt-24"
+        className="place-order flex max-md:flex-col items-start justify-between mt-24"
         action=""
       >
         <div className="place-order-left w-full max-w-[500px]">

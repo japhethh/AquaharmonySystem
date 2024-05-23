@@ -43,7 +43,7 @@ const ContactUs = () => {
           important to us as we strive to provide exceptional service to our
           university community.
         </p>
-        <ul className="mt-4">
+        <ul className="mt-4 font-normal text-gray-700">
           <li>helloworld32130@gmail.com</li>
           <li>09511431876</li>
           <li>Quezon City</li>
@@ -52,6 +52,8 @@ const ContactUs = () => {
 
       <div className="contact-col md:w-1/2 w-full">
         <form onSubmit={onSubmit}>
+      <label htmlFor="name" className="block font-semibold">Your email</label>
+          <input  type="email" name="email" placeholder="Enter your email" className="border border-gray-300 rounded-md py-2 px-3 mt-1 w-full" required/>
           <label htmlFor="name" className="block font-semibold">Your name</label>
           <input type="text" name="name" placeholder="Enter your name" className="border border-gray-300 rounded-md py-2 px-3 mt-1 w-full" required/>
           <label htmlFor="phone" className="block font-semibold mt-4">Phone Number</label>

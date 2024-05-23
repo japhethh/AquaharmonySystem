@@ -98,6 +98,7 @@ const Add = ({url}) => {
               name="category"
             >
               <option value="Shower">Shower</option>
+              <option value="Shower">Shower Head</option>
             </select>
 
           </div>
