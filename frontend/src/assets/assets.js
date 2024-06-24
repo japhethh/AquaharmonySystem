@@ -31,6 +31,9 @@ import iconlogo from './iconlogo.jpeg'
 import showerMenu from './shower.png'
 import messageContact from './messageContact.png'
 import HomeMainGirljpg from './HomeMainGirljpg.jpg'
+import defaultImage from './defaultImage.png'
+import upload_area from './upload_area.png'
+import active_online from './active_online.png'
 
 export const assets = {
     logo,
@@ -54,7 +57,10 @@ export const assets = {
     parcel_icon,
     iconlogo,
     messageContact,
-    HomeMainGirljpg
+    HomeMainGirljpg,
+    defaultImage,
+    upload_area,
+    active_online
 }
 
 export const menu_list = [

@@ -9,6 +9,10 @@ import { IoSearch } from "react-icons/io5";
 import { CgProfile } from "react-icons/cg";
 import { FaBars } from "react-icons/fa6";
 import { RiAccountCircleFill } from "react-icons/ri";
+import { IoPersonOutline } from "react-icons/io5";
+import { SlLogout } from "react-icons/sl";
+
+
 
 const Navbar = ({ setShowLogin }) => {
   const navigate = useNavigate();
@@ -20,8 +24,10 @@ const Navbar = ({ setShowLogin }) => {
 
   const logout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("accountData");
     setToken("");
     navigate("/");
+    window.location.reload();
   };
 
   useEffect(() => {
@@ -66,6 +72,7 @@ const Navbar = ({ setShowLogin }) => {
             >
               Menu
             </Link>
+            
             {/* <Link to="/mobile-app"
             onClick={() => setMenu("mobile-app")}
             className={
@@ -168,30 +175,51 @@ const Navbar = ({ setShowLogin }) => {
           </button>
         ) : (
           <div className="navbar-profile relative group">
-            <CgProfile className="text-[30px] text-gray-900" />
-            <ul className="nav-profile-dropdown absolute right-0 z-10 hidden group-hover:flex flex-col  gap-0 bg-white border-[1px] shadow-xl  rounded-md outline-white">
-              <li className="flex items-center justify-start px-6 py-3 text-gray-700 gap-1 cursor-pointer hover:text-orange-500">
-                {userInfo.user && (
-                  <>
-                    <h1>{userInfo.user.name}</h1>
-                  </>
-                )}
-              </li>
-              <Link rel="stylesheet" to="/account" className="flex items-center justify-start px-6 py-3 text-gray-700 gap-1 cursor-pointer hover:text-orange-500">
-                <RiAccountCircleFill />
-                  Account
+            <div className="flex flex-row gap-2">
+            <img
+              className="w-[40px] h-[40px] bg-contain rounded-full"
+              src={
+                userInfo.user && userInfo.user.image
+                  ? `http://localhost:4000/images/${userInfo.user.image}`
+                  : assets.upload_area
+              }
+              alt=""
+            />
+            {userInfo.user && (
+            <div className="flex flex-col ">
+              <h1 className="font-bold text-gray-600 text-[13px]">{userInfo.user.name}</h1>
+              <div className="flex flex-row justify-center items-center">
+              <h1 className="text-gray-400 text-xs italic">Online</h1> 
+              <img className="w-[15px]" src={assets.active_online} alt="" />
+              </div>
+            </div>
+            )
+            }
+            </div>
+            <ul className="nav-profile-dropdown w-[200px] absolute right-0 z-10 hidden group-hover:flex flex-col  gap-0 bg-white border-[1px] shadow-xl  rounded-md outline-white">
+              <div className="bg-gray-200 px-6 py-2">
+                <h1 className="text-gray-400 font-semibold">Account</h1>
+              </div>
+            
+              <Link
+                rel="stylesheet"
+                to="/account"
+                className="flex items-center justify-start px-6 py-3 text-gray-500 gap-1 cursor-pointer hover:text-orange-500"
+              >
+                <IoPersonOutline />
+                Profile
               </Link>
-              <li className="flex items-center justify-start px-6 py-3 text-gray-700 gap-1 cursor-pointer hover:text-orange-500">
+              <li className="flex items-center justify-start px-6 py-3 text-gray-500 gap-1 cursor-pointer hover:text-orange-500">
                 <HiOutlineShoppingBag />
                 <p>Orders</p>
               </li>
               <hr className="h-[1px] bg-blue-500" />
               <li
                 onClick={logout}
-                className="flex items-center text-gray-700  px-6 py-3 justify-start gap-1 cursor-pointer hover:text-orange-500"
+                className="flex items-center text-gray-500  px-6 py-3 justify-start gap-1 cursor-pointer hover:text-orange-500"
               >
                 <div className="flex justify-center items-center gap-1">
-                  <IoLogOutOutline />
+                  <SlLogout />
                   <p>Logout</p>
                 </div>
               </li>

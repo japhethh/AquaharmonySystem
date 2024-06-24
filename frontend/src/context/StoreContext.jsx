@@ -14,8 +14,9 @@ const reducer = (state, action) => {
       };
     case "UPDATE_USER":
       return {
-
-      }
+        ...state,
+        user: action.payload,
+      };
   }
 };
 
@@ -28,6 +29,8 @@ const StoreContextProvider = (props) => {
   const [userInfo, dispatch] = useReducer(reducer, {
     user: null,
   });
+
+  
   useEffect(() => {
     async function loadData() {
       await fetchFoodList();
@@ -39,6 +42,9 @@ const StoreContextProvider = (props) => {
     }
     loadData();
   }, []);
+
+  // const containingData = async (token) => {};
+
 
   const loadCartData = async (token) => {
     const response = await axios.post(
@@ -112,7 +118,7 @@ const StoreContextProvider = (props) => {
       });
       dispatch({ type: "GET_USER", payload: response.data.userData });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 

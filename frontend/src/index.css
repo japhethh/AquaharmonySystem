@@ -54,3 +54,30 @@ gap:10px;
   box-shadow:  6px 6px 12px #bebebe,
                -6px -6px 12px #ffffff;
 }
+
+.active_online {
+  position: relative;
+}
+
+.active_online::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: green;
+  animation: onlinePulse 1s infinite;
+}
+
+@keyframes onlinePulse {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.2);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}

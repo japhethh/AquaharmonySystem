@@ -9,14 +9,21 @@ import LoginPopup from "./components/LoginPopup";
 import Placeholder from "./pages/placeholder/Placeholder";
 import  ContactUs from "./pages/contactUs/contactUs";
 import  Account from "./pages/account/account";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
   return (
     <>
+    <div>
+    <ToastContainer/>
+      
       {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
       <div className="max-w-[1200px] mx-auto px-4">
         <Navbar setShowLogin={setShowLogin} />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
@@ -28,6 +35,8 @@ const App = () => {
         <Footer />
         {/* <Example /> */}
       </div>
+      </div>
+
     </>
   );
 };

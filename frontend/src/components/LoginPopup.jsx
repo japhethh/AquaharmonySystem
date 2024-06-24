@@ -1,53 +1,62 @@
-import React, { useContext, useState } from "react";
-import axios from 'axios'
-// import { assets } from "../assets/assets";
+import React, { useContext, useState,useEffect } from "react";
+import axios from "axios";
+import { assets } from "../assets/assets";
 import { IoIosClose } from "react-icons/io";
 import { StoreContext } from "../context/StoreContext";
 
 const LoginPopup = ({ setShowLogin }) => {
-  const { URL,setToken,token } = useContext(StoreContext);
+  const { URL, setToken, token } = useContext(StoreContext);
   const [currState, setCurrState] = useState("Login");
+  const [image,setImage] = useState(false)
   const [data, setData] = useState({
     name: "",
     email: "",
     password: "",
   });
 
+  useEffect(() => {
+    console.log(data)
+  })
   const onChangeHandler = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     setData((prev) => ({ ...prev, [name]: value }));
+  
   };
 
   const onLogin = async (event) => {
     event.preventDefault();
     let newUrl = URL;
-    if(currState === "Login"){
-      newUrl += "/api/user/login"
+    if (currState === "Login") {
+      newUrl += "/api/user/login";
+    } else {
+      newUrl += "/api/user/register";
     }
-    else{
-      newUrl += "/api/user/register"
-    }
+    const formData = new FormData();
+    formData.append("name", data.name);
+    formData.append("image",image);
+    formData.append("email", data.email);
+    formData.append("password", data.password);
 
-    const response = await axios.post(newUrl, data)
-    if(response.data.success){
-      setToken(response.data.token); 
-      localStorage.setItem("token",response.data.token)
-      setShowLogin(false)
-      window.location.reload(); 
-    }else{
-      alert(response.data.message)
+    const response = await axios.post(newUrl, formData);
+    if (response.data.success) {
+      setToken(response.data.token);
+      localStorage.setItem("token", response.data.token);
+      setShowLogin(false);
+      window.location.reload();
+    } else {
+      alert(response.data.message);
     }
-    
-
-  }
+  };
 
   return (
     <div className="bg-slate-600 bg-opacity-50 flex justify-center items-center absolute w-full h-screen z-10 ">
-      <form onSubmit={onLogin} className="login-popup-form max-w-[330px] flex flex-col gap-4 blur-none bg-white p-4 rounded-xl">
+      <form
+        onSubmit={onLogin}
+        className="login-popup-form max-w-[330px] flex flex-col gap-4 blur-none bg-white p-4 rounded-xl"
+      >
         <div className="form-title flex justify-between mb-5">
           <h2 className="text-xl font-semibold">{currState} </h2>
-
           <IoIosClose
             className="text-4xl cursor-pointer"
             onClick={() => setShowLogin(false)}
@@ -57,15 +66,28 @@ const LoginPopup = ({ setShowLogin }) => {
           {currState === "Login" ? (
             <></>
           ) : (
-            <input
-              name="name"
-              onChange={onChangeHandler}
-              value={data.name}
-              className="py-2 px-4 rounded-lg outline-none border-[1px] border-slate-300"
-              type="text"
-              placeholder="Your name"
-              required
+            <>
+             <div>
+                  <h1>Upload Image</h1>
+                </div>
+              <label htmlFor="image">
+                <img
+              className="w-[80px]"
+              src={image ? window.URL.createObjectURL(image) : assets.upload_area}
+              alt=""
             />
+              </label>
+              <input hidden required onChange={(e) => setImage(e.target.files[0])} type="file" id="image"/>
+              <input
+                name="name"
+                onChange={onChangeHandler}
+                value={data.name}
+                className="py-2 px-4 rounded-lg outline-none border-[1px] border-slate-300"
+                type="text"
+                placeholder="Your name"
+                required
+              />
+            </>
           )}
           <input
             name="email"
@@ -86,7 +108,10 @@ const LoginPopup = ({ setShowLogin }) => {
             required
           />
         </div>
-        <button type="submit" className="cursor-pointer py-2 px-4 rounded-lg bg-black text-white font-semibold">
+        <button
+          type="submit"
+          className="cursor-pointer py-2 px-4 rounded-lg bg-black text-white font-semibold"
+        >
           {currState === "Sign up" ? "Create account" : "Login"}
         </button>
         <div className="flex items-start mt-1  gap-2">

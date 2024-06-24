@@ -31,6 +31,7 @@ const createToken = (id) => {
 
 //Register
 const registerUser = async (req, res) => {
+  const image_filename = `${req.file.filename}`;
   const { name, password, email } = req.body;
 
   try {
@@ -62,6 +63,7 @@ const registerUser = async (req, res) => {
       name: name,
       email: email,
       password: hashedpassword,
+      image:image_filename,
     });
 
     try {
@@ -89,8 +91,7 @@ const getUser = async (req,res) => {
   const {userId} = req.body;
 
 try {
-  const user = await userModel.findById(userId);
-  const userData = await user.save();
+  const userData = await userModel.findById(userId);
   res.json({success:true,userData})
 } catch (error) {
   console.log(error);
@@ -98,4 +99,27 @@ try {
 }
 }
 
-export { loginUser, registerUser,UserList ,getUser};
+const updateUser = async (req,res) => {
+  const {userId,name,email,password} = req.body;
+
+  try {
+     const salt = await bcrypt.genSalt(10);
+     const hashedpassword = await bcrypt.hash(password, salt);
+  const updateUser = await userModel.findByIdAndUpdate(
+    userId,
+    {
+    name:name,
+    email:email,
+    password:hashedpassword
+  });
+  const user = await updateUser.save();
+  console.log(user)
+  res.json({success:true,user,message:"Update Successfully"})
+} catch (error) {
+  console.log(error);
+  res.json({success:false,message:"Error"})
+}
+  
+}
+
+export { loginUser, registerUser,UserList ,getUser ,updateUser};
